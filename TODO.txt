@@ -1,0 +1,52 @@
+Done:
+Repo
+Spawnpoint
+Postać 16x16, ale nie większa niż 32x32 raczej
+Gracz (global?)
+Templatka do poziomów -> tileset
+Meta i win lose screen
+
+Grafika:
+Postać:
+	animacja idle
+	animacja chodzenia
+	animacja biegania (jak będziemy chcieli)
+	animacja rzucania i podnoszenia)
+Pudełko (które gracz może podnieść na głowę i rzucić)
+Tileset, w skali do postaci
+Ruchoma platforma (ruchoma w silniku)
+Spawn gracza
+Meta
+Win screen
+Guzik
+Klucz
+Background (coś dużego, tileable na boki)
+Drzwi:
+	animacja otwierania
+Trampolina / jump block
+
+Programowanie:
+Deathbox (jak gracz spadnie)
+Guziki i klucze
+Jump block
+System interakcji kluczy i guzików z platformami i drzwiami (najpewniej osobna klasa)
+Wszystkie zmienne i interakcje powinny być na @export
+Dobrze nazwana i pokolorowana struktura folderów!
+Prompt do kliknięcia przycisku przy podniesieniu skrzynki
+
+Design:
+3 poziomy
+pierwszy gdzie przedstawiamy wgle koncept wstawiania sceny do main node'a
+drugi gdzie pokazujemy system interakcji, i gracz sam w inspektorze podpina drzwi do guzika
+trzeci gdzie wykorzystujemy już wszystko
+czwarty poziom gracze robią sami, po to jest templatka do poziomu, pokazujemy im wszystkie sceny z obiektami
+Tbh stary design jest bardzo dobry, imo można go skopiować 1 do 1 bo miał nawet fajne zagadki itp. jedyne co zawiodło to nieintucyjny system interakcji.
+
+WAŻNE!
+Dokumentacja:
+Wstęp, głównie dla prowadzacego warsztaty
+Opis przejścia kazdego poziomu i co ma wprowadzać dla gracza dany poziom
+
+Co opisać?:
+	Autotile w tilesecie
+	

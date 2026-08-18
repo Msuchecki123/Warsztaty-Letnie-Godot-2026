@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://uer5bcvocr05"]
+
+[ext_resource type="Script" uid="uid://crexulwnucvbj" path="res://Objects/JumpPad/jump_pad.gd" id="1_aotjb"]
+
+[sub_resource type="Gradient" id="Gradient_aotjb"]
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mhqeh"]
+gradient = SubResource("Gradient_aotjb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aotjb"]
+size = Vector2(12, 12)
+
+[node name="JumpPad" type="Node2D"]
+script = ExtResource("1_aotjb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.046875, 12)
+texture = SubResource("GradientTexture1D_mhqeh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 17
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_aotjb")

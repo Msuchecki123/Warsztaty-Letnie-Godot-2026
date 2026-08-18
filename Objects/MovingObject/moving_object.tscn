@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmw767r51vxen"]
+
+[ext_resource type="Script" uid="uid://wt2np4lh05hx" path="res://Objects/MovingObject/MovingObject.gd" id="1_66v22"]
+
+[node name="MovingObject" type="AnimatableBody2D"]
+script = ExtResource("1_66v22")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

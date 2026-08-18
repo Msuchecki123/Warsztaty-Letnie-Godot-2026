@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5ipyfij1npcd"]
+
+[ext_resource type="Script" uid="uid://dtwsrlswx4cgb" path="res://Objects/Button/button.gd" id="1_287iv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oty8g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqd3i"]
+size = Vector2(24, 16)
+
+[sub_resource type="Gradient" id="Gradient_287iv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hn3lg"]
+gradient = SubResource("Gradient_287iv")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djdu7"]
+size = Vector2(40, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxp0a"]
+size = Vector2(24, 20)
+
+[node name="Button" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_287iv")
+
+[node name="MovingPart" type="RigidBody2D" parent="."]
+position = Vector2(0, -34)
+collision_layer = 2
+collision_mask = 5
+can_sleep = false
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingPart"]
+modulate = Color(0.820008, 0, 0.294602, 1)
+position = Vector2(0, 16.000002)
+scale = Vector2(24, 15.999998)
+texture = SubResource("PlaceholderTexture2D_oty8g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPart"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_wqd3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.560784, 0.403922, 1)
+position = Vector2(9.536743e-07, -7)
+scale = Vector2(0.62499994, 0.24999999)
+texture = SubResource("GradientTexture2D_hn3lg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_djdu7")
+
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
+position = Vector2(0, -1)
+rotation = -3.14159
+node_a = NodePath("..")
+node_b = NodePath("../MovingPart")
+length = 10.0
+initial_offset = 10.0
+
+[node name="PressArea" type="Area2D" parent="."]
+position = Vector2(0, -23)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PressArea"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_wxp0a")

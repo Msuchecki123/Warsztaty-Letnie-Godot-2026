@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=4 uid="uid://c6ob7nll51s8i"]
+
+[ext_resource type="Script" uid="uid://gml50t6eo11q" path="res://Objects/Player/player.gd" id="1_156m4"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_156m4"]
+_data = PackedByteArray("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")
+size_override = Vector2(192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw17q"]
+atlas = SubResource("PortableCompressedTexture2D_156m4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2ya6"]
+atlas = SubResource("PortableCompressedTexture2D_156m4")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1rty"]
+atlas = SubResource("PortableCompressedTexture2D_156m4")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t45n6"]
+atlas = SubResource("PortableCompressedTexture2D_156m4")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7612"]
+atlas = SubResource("PortableCompressedTexture2D_156m4")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bpp7x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw17q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2ya6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1rty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1rty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t45n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7612")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_156m4"]
+size = Vector2(21, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw17q"]
+size = Vector2(44, 46)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 5
+platform_on_leave = 1
+script = ExtResource("1_156m4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_bpp7x")
+animation = &"Idle"
+autoplay = "Idle"
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://Objects/Player/Player.ase",
+"source_uid": 2951472546508936933
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4210227d7c5f3edc7ebb11c011a1d2c1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_156m4")
+
+[node name="GrabPoint" type="Node2D" parent="."]
+position = Vector2(27, -34)
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_yw17q")
+debug_color = Color(0.9604005, 0, 0.5189599, 0.41960785)
