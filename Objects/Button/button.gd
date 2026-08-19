@@ -1,10 +1,10 @@
 extends StaticBody2D
 class_name ButtonObj
 
-@export var button_force: float = 100.0
+@export var button_force: float = 4000.0
 @export var press_threshold: float = 10
 
-@export var interaction: Interaction = Interaction.new()
+@export var interaction: Interaction
 
 @onready var moving_part: RigidBody2D = $MovingPart
 @onready var press_area: Area2D = $PressArea
@@ -37,11 +37,11 @@ func _process(delta: float) -> void:
 	elif not _state and _prev_state:
 		trigger_interactions(false)
 	_prev_state = _state
-	
+
 
 func _on_press_area_entered(body: Node2D) -> void:
 	_pressing_objs.append(body)
-	
+
 
 func _on_press_area_exited(body: Node2D) -> void:
 	_pressing_objs.erase(body)

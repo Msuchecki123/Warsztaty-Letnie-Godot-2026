@@ -1,10 +1,96 @@
-[gd_scene load_steps=2 format=3 uid="uid://4lbvm6c0cabr"]
+[gd_scene load_steps=8 format=4 uid="uid://4lbvm6c0cabr"]
 
 [ext_resource type="Script" uid="uid://bj2ajrpj5fbcv" path="res://Objects/Key/key.gd" id="1_5l2od"]
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_5l2od"]
+_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAACIAAAAUklGRoAAAABXRUJQVlA4THMAAAAvD8ADEGdgpmGa+heBLJQsfAMbCtq2YcofXgGMxb8K2khSDoWdfz18DwKCIv9HCwAkBsCJqfftv+jzWFtx6bc0jpg9GEWSpKgtLBno33xX4kpgOhNn4pTxKYjo/wTgv43qROidUoDkSPIWw3YMoHGXSfwXAA==")
+size_override = Vector2(16, 16)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_5l2od"]
+points = PackedVector2Array(6, 3, 6, -1, 0, -1, -2, -3, -5, -3, -6, -2, -6, 2, -5, 3)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_lde1j"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAABAAAADGAAAAUklGRr4AAABXRUJQVlA4TLEAAAAvH8ADEE+gqJEkZRmfq+HIv8CzoaaRFOiOnwoH9PgXiJpGUqB7oIMSEedfIAKCIv9HCwD8/98FAHUP0Za+i6OZe23AUWPbbvOkj8AMell2AjaBhqA+GYn1vO0J3V9eAiGi/2rbtmEkQGvKGfDbXCkYksiVlhzHTkQZQ32gNWyVaFxlBx7hgFss7I8aEyusQUMbwEUbYORRmCGiL5sVEdHIw6KNYdEHQK/fz/whyTXhbwEA")
+size_override = Vector2(32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glifb"]
+atlas = SubResource("PortableCompressedTexture2D_lde1j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8prb"]
+atlas = SubResource("PortableCompressedTexture2D_lde1j")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5l2od"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_glifb")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_f8prb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Key" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 6
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("1_5l2od")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_5l2od")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://Objects/Key/Key.ase",
+"source_uid": 418283658105298278
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c101243136cc735f1e2249ca05ce0895"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_5l2od")
+
+[node name="PickUpQueue" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_5l2od")
+autoplay = "default"
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://Objects/Box/E.ase",
+"source_uid": 7684817205794199305
+}
+metadata/_aseprite_wizard_source_file_hash_ = "bb8bb5e48c9e9cb694ac8ba15866bd5a"

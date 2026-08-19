@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=4 uid="uid://2h4qe3ttc3xa"]
+
+[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://Levels/level.gd" id="1_3anf8"]
+[ext_resource type="TileSet" uid="uid://cidtehwoe2ty7" path="res://Tileset/Tileset.tres" id="2_fhqol"]
+[ext_resource type="PackedScene" uid="uid://c6ob7nll51s8i" path="res://Objects/Player/player.tscn" id="3_fhqol"]
+[ext_resource type="PackedScene" uid="uid://djvilelfve37h" path="res://Objects/Lava/Lava.tscn" id="4_iotdp"]
+[ext_resource type="PackedScene" uid="uid://di080tovdr3bq" path="res://Objects/Exit/Exit.tscn" id="5_nutv8"]
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource("1_3anf8")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD//wAAAQACAAAAAAD//wIAAQACAAIAAAD//wEAAQACAAEAAAD+/wIAAQABAAIAAAD+/wEAAQABAAEAAAD+/wAAAQABAAAAAAD9/wIAAQABAAIAAAD9/wEAAQABAAEAAAD9/wAAAQABAAAAAAAFAAIAAQACAAIAAAAFAAEAAQACAAEAAAAFAAAAAQACAAAAAAAEAAIAAQABAAIAAAAEAAEAAQABAAEAAAAEAAAAAQABAAAAAAADAAIAAQAAAAIAAAADAAEAAQAAAAEAAAADAAAAAQAAAAAAAAD8/wIAAQABAAIAAAD8/wEAAQABAAEAAAD8/wAAAQABAAAAAAD7/wIAAQABAAIAAAD7/wEAAQABAAEAAAD7/wAAAQABAAAAAAD6/wIAAQAAAAIAAAD6/wEAAQAAAAEAAAD6/wAAAQAAAAAAAAALAAIAAQABAAIAAAALAAEAAQABAAEAAAALAAAAAQABAAAAAAAKAAIAAQABAAIAAAAKAAEAAQABAAEAAAAKAAAAAQABAAAAAAAJAAIAAQAAAAIAAAAJAAEAAQAAAAEAAAAJAAAAAQAAAAAAAAAOAAIAAQACAAIAAAAOAAEAAQACAAEAAAAOAAAAAQACAAAAAAANAAIAAQABAAIAAAANAAEAAQABAAEAAAANAAAAAQABAAAAAAAMAAIAAQABAAIAAAAMAAEAAQABAAEAAAAMAAAAAQABAAAAAAA=")
+tile_set = ExtResource("2_fhqol")
+
+[node name="Player" parent="." instance=ExtResource("3_fhqol")]
+position = Vector2(-64, -32)
+
+[node name="Lava2" parent="." instance=ExtResource("4_iotdp")]
+position = Vector2(104, 8)
+
+[node name="Lava" parent="Lava2" instance=ExtResource("4_iotdp")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava2/Lava" instance=ExtResource("4_iotdp")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="." instance=ExtResource("4_iotdp")]
+position = Vector2(8, 8)
+
+[node name="Lava" parent="Lava" instance=ExtResource("4_iotdp")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava" instance=ExtResource("4_iotdp")]
+position = Vector2(16, 0)
+
+[node name="Exit" parent="." instance=ExtResource("5_nutv8")]
+position = Vector2(190, -12)

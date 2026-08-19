@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://nyf3up3bnb0b" path="res://Setup/world.gd" id="1_40tn3"]
 [ext_resource type="Script" uid="uid://bx81vtjfd4tdv" path="res://Camera/camera.gd" id="1_ospxy"]
-[ext_resource type="PackedScene" uid="uid://b8fiy2oxfrmam" path="res://Objects/Exit/TestLevel.tscn" id="2_s802l"]
+[ext_resource type="PackedScene" uid="uid://b8fiy2oxfrmam" path="res://Levels/TestLevel.tscn" id="2_s802l"]
 [ext_resource type="PackedScene" uid="uid://c6ob7nll51s8i" path="res://Objects/Player/player.tscn" id="3_01dii"]
 
 [node name="World" type="Node2D"]

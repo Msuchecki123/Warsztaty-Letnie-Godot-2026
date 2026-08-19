@@ -134,3 +134,5 @@ metadata/_aseprite_wizard_source_file_hash_ = "18c43e91becaded845a2403a9a6f3f1f"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -4)
 shape = SubResource("RectangleShape2D_15vrf")
+
+[connection signal="animation_looped" from="Sprite2D" to="." method="_on_sprite_2d_animation_looped"]

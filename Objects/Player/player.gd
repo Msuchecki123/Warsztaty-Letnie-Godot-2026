@@ -63,11 +63,13 @@ func _calculate_gravity() -> Vector2:
 func _on_body_entered_interaction_area(body: Node2D) -> void:
 	if body is PlayerInteractable:
 		_player_interactables.append(body)
+		#print(_player_interactables)
 
 
 func _on_body_exited_interaction_area(body: Node2D) -> void:
 	if body is PlayerInteractable:
 		_player_interactables.erase(body)
+		#print(_player_interactables)
 
 
 func release_interactable() -> void:

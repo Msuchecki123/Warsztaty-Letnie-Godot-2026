@@ -1,26 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://uer5bcvocr05"]
+[gd_scene load_steps=4 format=4 uid="uid://uer5bcvocr05"]
 
 [ext_resource type="Script" uid="uid://crexulwnucvbj" path="res://Objects/JumpPad/jump_pad.gd" id="1_aotjb"]
 
-[sub_resource type="Gradient" id="Gradient_aotjb"]
-colors = PackedColorArray(0, 1, 0, 1, 0, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_mhqeh"]
-gradient = SubResource("Gradient_aotjb")
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_aotjb"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAACoAAAAUklGRqAAAABXRUJQVlA4TJMAAAAvL8AHEGegKJKk5nIi/LCCErSjhR82FEWS1Fx8JbIDBGCaL55woqSNJGh30f02zr+0YwcFBEX+jxYAsPYCwF7hV8VGs+m3Sj9v/2lquM8+94BNbNtREgeJhT19AAFIwMJmgT7V14ADNIADYut9uq2L6P8EiH9ZO8PsNUP5Qsw0SLQVWpmUdnTVcclw6eqJjtvo2QMA")
+size_override = Vector2(48, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aotjb"]
-size = Vector2(12, 12)
+size = Vector2(32, 5)
 
 [node name="JumpPad" type="Node2D"]
 script = ExtResource("1_aotjb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.046875, 12)
-texture = SubResource("GradientTexture1D_mhqeh")
+texture_filter = 1
+position = Vector2(0, -8)
+texture = SubResource("PortableCompressedTexture2D_aotjb")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://Objects/JumpPad/JumpPad.ase",
+"source_uid": 2825174395951944260
+}
+metadata/_aseprite_wizard_source_file_hash_ = "fdf827371acb716f81918a3d9dca0756"
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 17
+collision_layer = 16
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_aotjb")

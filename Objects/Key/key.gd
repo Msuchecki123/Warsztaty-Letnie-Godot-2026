@@ -2,7 +2,7 @@ extends PlayerInteractable
 class_name KeyObj
 
 
-@export var interaction: Interaction = Interaction.new()
+@export var interaction: Interaction
 
 
 func _ready() -> void:
@@ -16,11 +16,7 @@ func handle_interaction(body: Node2D) -> void:
 	#for interaction in interactions:
 	var interactable_obj: ObjectInteractable = get_node(interaction.interactable)
 	if body == interactable_obj:
-		match interaction.mode:
-			Interaction.InteractionMode.SetOn:
-				interactable_obj.OnInteraction()
-			Interaction.InteractionMode.SetOff:
-				interactable_obj.OffInteraction()
+		interactable_obj.OnInteraction()
 		queue_free()
 		return
 

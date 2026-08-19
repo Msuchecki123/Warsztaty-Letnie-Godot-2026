@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bgishehxohiwa"
+path="res://.godot/imported/JumpPad.ase-adbafe4f7ce244966dfbbc0c3d88d957.res"
+
+[deps]
+
+source_file="res://Objects/JumpPad/JumpPad.ase"
+dest_files=["res://.godot/imported/JumpPad.ase-adbafe4f7ce244966dfbbc0c3d88d957.res"]
+
+[params]
+

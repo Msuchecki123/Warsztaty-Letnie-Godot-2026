@@ -45,6 +45,9 @@ animations = [{
 }]
 
 [node name="Box" type="RigidBody2D"]
+z_index = 5
+collision_layer = 5
+collision_mask = 6
 script = ExtResource("1_ite0f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -81,6 +84,7 @@ shape = SubResource("RectangleShape2D_ite0f")
 texture_filter = 1
 position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_gq1dk")
+autoplay = "default"
 frame_progress = 0.45159683
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
