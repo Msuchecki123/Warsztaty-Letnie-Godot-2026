@@ -1,18 +1,18 @@
 [gd_scene load_steps=11 format=4 uid="uid://rjxpq6kv87nq"]
 
-[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://Levels/level.gd" id="1_wcc2u"]
+[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://-Levels-/level.gd" id="1_wcc2u"]
 [ext_resource type="TileSet" uid="uid://cidtehwoe2ty7" path="res://Tileset/Tileset.tres" id="2_nn734"]
-[ext_resource type="PackedScene" uid="uid://di080tovdr3bq" path="res://Objects/Exit/Exit.tscn" id="3_506po"]
-[ext_resource type="PackedScene" uid="uid://d3o0m7mctydmw" path="res://Objects/Gate/gate.tscn" id="4_v115i"]
-[ext_resource type="PackedScene" uid="uid://djvilelfve37h" path="res://Objects/Lava/Lava.tscn" id="5_jglcl"]
-[ext_resource type="PackedScene" uid="uid://uer5bcvocr05" path="res://Objects/JumpPad/JumpPad.tscn" id="6_w0h0a"]
-[ext_resource type="PackedScene" uid="uid://4lbvm6c0cabr" path="res://Objects/Key/key.tscn" id="7_m3ha0"]
-[ext_resource type="Script" uid="uid://cbt2gaemoegu" path="res://Interaction.gd" id="8_vd23k"]
-[ext_resource type="PackedScene" uid="uid://c6ob7nll51s8i" path="res://Objects/Player/player.tscn" id="9_vd23k"]
+[ext_resource type="PackedScene" uid="uid://di080tovdr3bq" path="res://-Obiekty-/Exit.tscn" id="3_506po"]
+[ext_resource type="PackedScene" uid="uid://d3o0m7mctydmw" path="res://-Obiekty-/Door.tscn" id="4_v115i"]
+[ext_resource type="PackedScene" uid="uid://djvilelfve37h" path="res://-Obiekty-/Lava.tscn" id="5_jglcl"]
+[ext_resource type="PackedScene" uid="uid://uer5bcvocr05" path="res://-Obiekty-/JumpPad.tscn" id="6_w0h0a"]
+[ext_resource type="PackedScene" uid="uid://4lbvm6c0cabr" path="res://-Obiekty-/Key.tscn" id="7_m3ha0"]
+[ext_resource type="Script" uid="uid://cbt2gaemoegu" path="res://Setup/Interaction.gd" id="8_vd23k"]
+[ext_resource type="PackedScene" uid="uid://c6ob7nll51s8i" path="res://-Gracz-/player.tscn" id="9_vd23k"]
 
-[sub_resource type="Resource" id="Resource_x7rwe"]
+[sub_resource type="Resource" id="Resource_wvi4a"]
 script = ExtResource("8_vd23k")
-interactable = NodePath("../Gate2")
+interactable = NodePath("../Gate")
 metadata/_custom_type_script = "uid://cbt2gaemoegu"
 
 [node name="LevelTemplate" type="Node2D"]
@@ -58,10 +58,11 @@ position = Vector2(16, 0)
 
 [node name="JumpPad" parent="." instance=ExtResource("6_w0h0a")]
 position = Vector2(-172, 0)
+jump_velocity = 1000
 
 [node name="Key" parent="." instance=ExtResource("7_m3ha0")]
 position = Vector2(-372, -136)
-interaction = SubResource("Resource_x7rwe")
+interaction = SubResource("Resource_wvi4a")
 
 [node name="Player" parent="." instance=ExtResource("9_vd23k")]
 position = Vector2(-21, -48)

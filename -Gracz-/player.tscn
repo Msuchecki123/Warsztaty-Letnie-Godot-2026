@@ -60,7 +60,7 @@ size = Vector2(44, 46)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
-collision_mask = 5
+collision_mask = 2
 platform_on_leave = 1
 script = ExtResource("1_156m4")
 
@@ -69,6 +69,8 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bpp7x")
 animation = &"Idle"
 autoplay = "Idle"
+frame = 1
+frame_progress = 0.39054123
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "pending_changes": {}
@@ -96,6 +98,7 @@ shape = SubResource("RectangleShape2D_156m4")
 position = Vector2(17, -19)
 
 [node name="InteractionArea" type="Area2D" parent="."]
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_yw17q")

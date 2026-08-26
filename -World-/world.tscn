@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://w4nf6cnpe7ru"]
+
+[ext_resource type="Script" uid="uid://nyf3up3bnb0b" path="res://Setup/world.gd" id="1_83h10"]
+[ext_resource type="PackedScene" uid="uid://rjxpq6kv87nq" path="res://-Levels-/Level2.tscn" id="2_83h10"]
+[ext_resource type="PackedScene" uid="uid://c6ob7nll51s8i" path="res://-Gracz-/player.tscn" id="3_8ausw"]
+[ext_resource type="Script" uid="uid://bx81vtjfd4tdv" path="res://Setup/Camera/camera.gd" id="4_eud5j"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_83h10")
+level_tscn = ExtResource("2_83h10")
+player_tscn = ExtResource("3_8ausw")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("4_eud5j")
+acceleration = 5
+metadata/_custom_type_script = "uid://bx81vtjfd4tdv"

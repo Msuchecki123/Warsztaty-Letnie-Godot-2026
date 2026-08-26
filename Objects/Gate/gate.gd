@@ -18,8 +18,8 @@ func OffInteraction() -> void:
 
 func toggle_open(desired_state : bool):
 	print("Gate desired state: " + str(desired_state))
-	collision_shape.disabled = desired_state
-	print(collision_shape.disabled)
+	collision_shape.set_deferred("disabled", desired_state)
+	#print(collision_shape.disabled)
 	if desired_state == true:
 		sprite.speed_scale = 1.0
 	else:
@@ -32,6 +32,3 @@ func _on_sprite_2d_animation_looped() -> void:
 	else:
 		sprite.frame = 0
 	sprite.speed_scale = 0.0
-
-func _process(_delta: float) -> void:
-	print(collision_shape.disabled)

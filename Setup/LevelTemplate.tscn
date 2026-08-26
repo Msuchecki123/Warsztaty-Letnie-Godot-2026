@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c13i7n1p0oymx"]
 
-[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://Levels/level.gd" id="1_bsrj8"]
+[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://-Levels-/level.gd" id="1_bsrj8"]
 [ext_resource type="TileSet" uid="uid://cidtehwoe2ty7" path="res://Tileset/Tileset.tres" id="2_0bju4"]
 
 [node name="LevelTemplate" type="Node2D"]

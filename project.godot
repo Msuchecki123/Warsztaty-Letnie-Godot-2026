@@ -20,7 +20,16 @@ Game="*res://Setup/game.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/moving_objects_preditctor/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://-Gracz-/": "red",
+"res://-Levels-/": "orange",
+"res://-Obiekty-/": "yellow",
+"res://-World-/": "green"
+}
 
 [input]
 

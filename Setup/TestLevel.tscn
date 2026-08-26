@@ -1,16 +1,16 @@
 [gd_scene load_steps=14 format=4 uid="uid://b8fiy2oxfrmam"]
 
-[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://Levels/level.gd" id="1_ej1bv"]
-[ext_resource type="PackedScene" uid="uid://c6ob7nll51s8i" path="res://Objects/Player/player.tscn" id="2_cxxvu"]
-[ext_resource type="PackedScene" uid="uid://dti6taqvwyq36" path="res://Objects/Box/box.tscn" id="3_a5le3"]
-[ext_resource type="PackedScene" uid="uid://di080tovdr3bq" path="res://Objects/Exit/Exit.tscn" id="4_ijb51"]
-[ext_resource type="PackedScene" uid="uid://djvilelfve37h" path="res://Objects/Lava/Lava.tscn" id="5_76fkc"]
+[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://-Levels-/level.gd" id="1_ej1bv"]
+[ext_resource type="PackedScene" uid="uid://c6ob7nll51s8i" path="res://-Gracz-/player.tscn" id="2_cxxvu"]
+[ext_resource type="PackedScene" uid="uid://dti6taqvwyq36" path="res://-Obiekty-/Box.tscn" id="3_a5le3"]
+[ext_resource type="PackedScene" uid="uid://di080tovdr3bq" path="res://-Obiekty-/Exit.tscn" id="4_ijb51"]
+[ext_resource type="PackedScene" uid="uid://djvilelfve37h" path="res://-Obiekty-/Lava.tscn" id="5_76fkc"]
 [ext_resource type="TileSet" uid="uid://cidtehwoe2ty7" path="res://Tileset/Tileset.tres" id="6_jfium"]
-[ext_resource type="PackedScene" uid="uid://uer5bcvocr05" path="res://Objects/JumpPad/JumpPad.tscn" id="7_wenv2"]
-[ext_resource type="PackedScene" uid="uid://d3o0m7mctydmw" path="res://Objects/Gate/gate.tscn" id="8_wq5b5"]
-[ext_resource type="PackedScene" uid="uid://c5ipyfij1npcd" path="res://Objects/Button/Button.tscn" id="9_8lo6y"]
-[ext_resource type="Script" uid="uid://cbt2gaemoegu" path="res://Interaction.gd" id="10_gp5y3"]
-[ext_resource type="PackedScene" uid="uid://4lbvm6c0cabr" path="res://Objects/Key/key.tscn" id="11_w8qko"]
+[ext_resource type="PackedScene" uid="uid://uer5bcvocr05" path="res://-Obiekty-/JumpPad.tscn" id="7_wenv2"]
+[ext_resource type="PackedScene" uid="uid://d3o0m7mctydmw" path="res://-Obiekty-/Door.tscn" id="8_wq5b5"]
+[ext_resource type="PackedScene" uid="uid://c5ipyfij1npcd" path="res://-Obiekty-/Button.tscn" id="9_8lo6y"]
+[ext_resource type="Script" uid="uid://cbt2gaemoegu" path="res://Setup/Interaction.gd" id="10_gp5y3"]
+[ext_resource type="PackedScene" uid="uid://4lbvm6c0cabr" path="res://-Obiekty-/Key.tscn" id="11_w8qko"]
 
 [sub_resource type="Resource" id="Resource_rm7m0"]
 script = ExtResource("10_gp5y3")
@@ -27,7 +27,6 @@ script = ExtResource("1_ej1bv")
 
 [node name="Player" parent="." instance=ExtResource("2_cxxvu")]
 position = Vector2(85, 25)
-collision_mask = 2
 
 [node name="Box" parent="." instance=ExtResource("3_a5le3")]
 position = Vector2(82, 176)
@@ -48,6 +47,7 @@ tile_set = ExtResource("6_jfium")
 
 [node name="JumpPad" parent="." instance=ExtResource("7_wenv2")]
 position = Vector2(-10, 208)
+jump_velocity = 1000
 
 [node name="Gate" parent="." instance=ExtResource("8_wq5b5")]
 position = Vector2(168, 108)

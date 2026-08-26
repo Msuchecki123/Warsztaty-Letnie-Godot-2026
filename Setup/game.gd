@@ -35,12 +35,14 @@ func get_player_respawn_point() -> Node2D:
 #TODO czy to zostawiać?
 func handle_player_death() -> void:
 	get_camera().target = null
-	
-	#get_particles().emit_particles("player_death", get_player().global_position)
+		
+		#get_particles().emit_particles("player_death", get_player().global_position)
 
 	await get_tree().create_timer(0.6).timeout
-	var player = get_world().spawn_player()
-	get_camera().target = player
+
+	if !get_player():
+		var player = get_world().spawn_player()
+		get_camera().target = player
 
 
 func handle_victory() -> void:

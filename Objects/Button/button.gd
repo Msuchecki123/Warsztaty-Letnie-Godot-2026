@@ -19,6 +19,7 @@ var _prev_state := false
 
 func trigger_interactions(turn_on: bool) -> void:
 	interaction.do_interaction(self, turn_on)
+	print("do interaction button")
 
 
 func _ready() -> void:
@@ -32,10 +33,13 @@ func _process(delta: float) -> void:
 	_pressed = len(_pressing_objs)
 
 	_state = moving_part.position.y - _orig_moving_part_pos.y > press_threshold
+	#print(moving_part.position.y - _orig_moving_part_pos.y)
 	if _state and not _prev_state:
 		trigger_interactions(true)
+		print("trigger interaction true")
 	elif not _state and _prev_state:
 		trigger_interactions(false)
+		print("trigger interaction false")
 	_prev_state = _state
 
 

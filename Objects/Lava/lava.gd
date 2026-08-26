@@ -2,7 +2,6 @@ extends Node2D
 class_name Lava
 
 @onready var area: Area2D = $Area2D
-@onready var sprite: Sprite2D = $Sprite2D
 
 
 func _ready() -> void:
@@ -10,6 +9,9 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D):
+	if body is TileMapLayer or body is MovingObject:
+		return
 	if body.has_method("_on_death"):
 		body.call("_on_death")
+		print("death")
 	body.queue_free()

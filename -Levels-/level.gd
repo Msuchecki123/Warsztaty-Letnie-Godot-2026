@@ -2,7 +2,7 @@ extends Node2D
 class_name Level
 
 @onready var player_respawn_point_tscn: PackedScene = preload("uid://tfu2wfjcn714")
-@onready var _player_respawn_point: PlayerRespawnPoint = $PlayerRespawnPoint
+@onready var _player_respawn_point: PlayerRespawnPoint = self.get_node("PlayerRespawnPoint")
 
 
 func get_player() -> Player:

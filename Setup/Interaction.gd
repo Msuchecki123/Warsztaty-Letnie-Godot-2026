@@ -14,11 +14,13 @@ class_name Interaction
 
 func do_interaction(context: Node, turn_on : bool = false) -> void:
 	var interactable_obj: ObjectInteractable = context.get_node(interactable)
-	if turn_on:
-		interactable_obj.OnInteraction()
-	else:
-		interactable_obj.OffInteraction()
-
+	if interactable_obj:
+		if turn_on:
+			interactable_obj.OnInteraction()
+			print("on interaction")
+		else:
+			interactable_obj.OffInteraction()
+			print("off interaction")
 	#if turn_on:
 		#if trigger_mode == TriggerMode.Toggle or trigger_mode == TriggerMode.Toggle: 
 	#		_perform_interaction(interactable_obj, false)

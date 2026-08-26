@@ -23,6 +23,7 @@ size = Vector2(24, 20)
 collision_layer = 3
 collision_mask = 5
 script = ExtResource("1_287iv")
+press_threshold = 8.0
 
 [node name="MovingPart" type="RigidBody2D" parent="."]
 position = Vector2(0, -34)

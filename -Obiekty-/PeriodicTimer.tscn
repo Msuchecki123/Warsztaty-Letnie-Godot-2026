@@ -4,3 +4,5 @@
 
 [node name="PeriodicTimer" type="Node2D"]
 script = ExtResource("1_026qi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

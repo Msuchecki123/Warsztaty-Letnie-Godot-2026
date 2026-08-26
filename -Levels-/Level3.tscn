@@ -1,0 +1,183 @@
+[gd_scene load_steps=14 format=4 uid="uid://cu8ahv65xrecd"]
+
+[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://-Levels-/level.gd" id="1_xb24h"]
+[ext_resource type="TileSet" uid="uid://cidtehwoe2ty7" path="res://Tileset/Tileset.tres" id="2_jon3f"]
+[ext_resource type="PackedScene" uid="uid://di080tovdr3bq" path="res://-Obiekty-/Exit.tscn" id="3_8eiv4"]
+[ext_resource type="PackedScene" uid="uid://djvilelfve37h" path="res://-Obiekty-/Lava.tscn" id="4_yd8fq"]
+[ext_resource type="PackedScene" uid="uid://c6ob7nll51s8i" path="res://-Gracz-/player.tscn" id="5_yd8fq"]
+[ext_resource type="PackedScene" uid="uid://c5ipyfij1npcd" path="res://-Obiekty-/Button.tscn" id="6_vybwq"]
+[ext_resource type="PackedScene" uid="uid://dti6taqvwyq36" path="res://-Obiekty-/Box.tscn" id="7_4cgce"]
+[ext_resource type="Script" uid="uid://cbt2gaemoegu" path="res://Setup/Interaction.gd" id="7_xxxi4"]
+[ext_resource type="PackedScene" uid="uid://cmw767r51vxen" path="res://-Obiekty-/Moving_Platfrom.tscn" id="8_twi1l"]
+[ext_resource type="PackedScene" uid="uid://dk2wsfuruytyc" path="res://-Obiekty-/PeriodicTimer.tscn" id="9_hy5j1"]
+[ext_resource type="Script" uid="uid://chb8wwo0f4vs3" path="res://Objects/PeriodicTimer/TimerConnection.gd" id="10_xxxi4"]
+
+[sub_resource type="Resource" id="Resource_4c4gq"]
+script = ExtResource("7_xxxi4")
+interactable = NodePath("../PeriodicTimer")
+metadata/_custom_type_script = "uid://cbt2gaemoegu"
+
+[sub_resource type="Resource" id="Resource_xxxi4"]
+script = ExtResource("10_xxxi4")
+interactable = NodePath("../MovingObject")
+metadata/_custom_type_script = "uid://chb8wwo0f4vs3"
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource("1_xb24h")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 1
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAABAAIAAQABAAEAAAABAAEAAQABAAEAAAABAAAAAQABAAAAAAAAAAIAAQABAAEAAAAAAAEAAQABAAEAAAD//wIAAQABAAEAAAD//wEAAQABAAEAAAACAAMAAQABAAIAAAACAAIAAQABAAEAAAACAAEAAQAAAAQAAAACAAAAAQACAAAAAAABAAMAAQABAAIAAAAAAAMAAQABAAIAAAD//wMAAQABAAIAAAD+/wMAAQABAAIAAAD+/wIAAQABAAEAAAD+/wEAAQABAAEAAAD+/wAAAQABAAAAAAD9/wMAAQABAAIAAAD9/wIAAQABAAEAAAD9/wEAAQABAAEAAAD9/wAAAQABAAAAAAD8/wMAAQABAAIAAAD8/wIAAQABAAEAAAD8/wEAAQABAAEAAAD8/wAAAQABAAAAAAD7/wMAAQABAAIAAAD7/wIAAQABAAEAAAD7/wEAAQABAAEAAAD7/wAAAQABAAAAAAD2/wMAAQABAAIAAAD2/wIAAQABAAEAAAD2/wEAAQABAAEAAAD2/wAAAQABAAAAAAD1/wMAAQABAAIAAAD1/wIAAQABAAEAAAD1/wEAAQABAAEAAAD1/wAAAQABAAAAAAD0/wMAAQABAAIAAAD0/wIAAQABAAEAAAD0/wEAAQABAAEAAAD0/wAAAQABAAAAAADz/wMAAQABAAIAAADz/wIAAQABAAEAAADz/wEAAQABAAEAAADz/wAAAQABAAAAAAD2//v/AQACAAIAAAD2//r/AQACAAEAAAD2//n/AQACAAEAAAD2//j/AQACAAEAAAD2//f/AQACAAEAAAD2//b/AQACAAEAAAD2//X/AQACAAEAAAD1//v/AQABAAIAAAD1//r/AQABAAEAAAD1//n/AQABAAEAAAD1//j/AQABAAEAAAD1//f/AQABAAEAAAD1//b/AQABAAEAAAD1//X/AQABAAEAAAD0//v/AQABAAIAAAD0//r/AQABAAEAAAD0//n/AQABAAEAAAD0//j/AQABAAEAAAD0//f/AQABAAEAAAD0//b/AQABAAEAAAD0//X/AQABAAEAAADz//v/AQAAAAIAAADz//r/AQAAAAEAAADz//n/AQAAAAEAAADz//j/AQAAAAEAAADz//f/AQAAAAEAAADz//b/AQAAAAEAAADz//X/AQAAAAEAAAD6/wMAAQABAAIAAAD6/wIAAQABAAEAAAD6/wEAAQABAAEAAAD6/wAAAQABAAAAAAD5/wMAAQABAAIAAAD5/wIAAQABAAEAAAD5/wEAAQABAAEAAAD5/wAAAQABAAAAAAD4/wMAAQABAAIAAAD4/wIAAQABAAEAAAD4/wEAAQABAAEAAAD4/wAAAQABAAAAAAD3/wMAAQABAAIAAAD3/wIAAQABAAEAAAD3/wEAAQABAAEAAAD3/wAAAQABAAAAAADy//v/AQABAAUAAADx//v/AQABAAUAAADw//v/AQABAAUAAADv//v/AQAAAAUAAADy/wMAAQABAAIAAADy/wIAAQABAAEAAADy/wEAAQABAAEAAADy/wAAAQABAAAAAADx/wMAAQABAAIAAADx/wIAAQABAAEAAADx/wEAAQABAAEAAADx/wAAAQABAAAAAADw/wMAAQABAAIAAADw/wIAAQABAAEAAADw/wEAAQABAAEAAADw/wAAAQABAAAAAADv/wMAAQABAAIAAADv/wIAAQABAAEAAADv/wEAAQABAAEAAADv/wAAAQABAAAAAADu/wMAAQABAAIAAADu/wIAAQABAAEAAADu/wEAAQABAAEAAADu/wAAAQABAAAAAADt/wMAAQABAAIAAADt/wIAAQABAAEAAADt/wEAAQABAAEAAADt/wAAAQABAAAAAADs/wMAAQABAAIAAADs/wIAAQABAAEAAADs/wEAAQABAAEAAADs/wAAAQAAAAQAAADs////AQACAAEAAADs//7/AQACAAEAAADs//3/AQACAAEAAADs//z/AQACAAEAAADs//v/AQACAAEAAADs//r/AQACAAEAAADs//n/AQACAAEAAADs//j/AQACAAEAAADr/wMAAQAAAAIAAADr/wIAAQAAAAEAAADr/wEAAQAAAAEAAADr/wAAAQAAAAEAAADr////AQAAAAEAAADr//7/AQAAAAEAAADr//3/AQAAAAEAAADr//z/AQAAAAEAAADr//v/AQAAAAEAAADr//r/AQAAAAEAAADr//n/AQAAAAEAAADr//j/AQAAAAEAAADs//f/AQACAAEAAADs//b/AQACAAEAAADs//X/AQACAAEAAADr//f/AQAAAAEAAADr//b/AQAAAAEAAADr//X/AQAAAAEAAADs//T/AQACAAEAAADs//P/AQACAAEAAADs//L/AQACAAEAAADs//H/AQACAAEAAADs//D/AQACAAEAAADs/+//AQABAAAAAADr//T/AQAAAAEAAADr//P/AQAAAAEAAADr//L/AQAAAAEAAADr//H/AQAAAAEAAADr//D/AQAAAAEAAADr/+//AQAAAAAAAAD2//T/AQACAAEAAAD2//P/AQACAAEAAAD2//L/AQACAAEAAAD2//H/AQACAAEAAAD2//D/AQACAAEAAAD2/+//AQACAAAAAAD1//T/AQABAAEAAAD1//P/AQABAAEAAAD1//L/AQABAAEAAAD1//H/AQABAAEAAAD1//D/AQABAAEAAAD1/+//AQABAAAAAAD0//T/AQABAAEAAAD0//P/AQABAAEAAAD0//L/AQABAAEAAAD0//H/AQABAAEAAAD0//D/AQABAAEAAAD0/+//AQABAAAAAADz//T/AQAAAAEAAADz//P/AQAAAAEAAADz//L/AQAAAAEAAADz//H/AQAAAAEAAADz//D/AQAAAAEAAADz/+//AQABAAAAAADy/+//AQABAAAAAADx/+//AQABAAAAAADw/+//AQABAAAAAADv/+//AQABAAAAAADu/+//AQABAAAAAADt/+//AQABAAAAAAAxAAMAAQABAAIAAAAxAAIAAQABAAEAAAAxAAEAAQABAAEAAAAxAAAAAQABAAAAAAAwAAMAAQABAAIAAAAwAAIAAQABAAEAAAAwAAEAAQABAAEAAAAwAAAAAQABAAAAAAAvAAMAAQABAAIAAAAvAAIAAQABAAEAAAAvAAEAAQABAAEAAAAvAAAAAQABAAAAAAAuAAMAAQABAAIAAAAuAAIAAQABAAEAAAAuAAEAAQABAAQAAAAuAAAAAQAAAAAAAAA1AAMAAQACAAIAAAA1AAIAAQACAAEAAAA1AAEAAQACAAEAAAA1AAAAAQACAAAAAAA0AAMAAQABAAIAAAA0AAIAAQABAAEAAAA0AAEAAQABAAEAAAA0AAAAAQABAAAAAAAzAAMAAQABAAIAAAAzAAIAAQABAAEAAAAzAAEAAQABAAEAAAAzAAAAAQABAAAAAAAyAAMAAQABAAIAAAAyAAIAAQABAAEAAAAyAAEAAQABAAEAAAAyAAAAAQABAAAAAAACAP//AQACAAEAAAACAP7/AQACAAEAAAACAP3/AQACAAEAAAACAPz/AQACAAEAAAACAPv/AQACAAEAAAABAPv/AQABAAAAAAAAAPv/AQABAAAAAAD///v/AQABAAAAAAD+//v/AQABAAAAAAD9//v/AQABAAAAAAD8//v/AQABAAAAAAD7//v/AQAAAAAAAAACAPr/AQACAAEAAAACAPn/AQACAAEAAAACAPj/AQACAAEAAAACAPf/AQACAAEAAAACAPb/AQACAAAAAAAtAAMAAQABAAIAAAAtAAIAAQABAAEAAAAtAAEAAQABAAAAAAAsAAMAAQABAAIAAAAsAAIAAQABAAEAAAAsAAEAAQABAAAAAAArAAMAAQABAAIAAAArAAIAAQABAAEAAAArAAEAAQABAAAAAAAqAAMAAQABAAIAAAAqAAIAAQABAAEAAAAqAAEAAQABAAAAAAApAAMAAQABAAIAAAApAAIAAQABAAEAAAApAAEAAQABAAAAAAAoAAMAAQABAAIAAAAoAAIAAQABAAEAAAAoAAEAAQABAAAAAAAnAAMAAQABAAIAAAAnAAIAAQABAAEAAAAnAAEAAQABAAAAAAAmAAMAAQABAAIAAAAmAAIAAQABAAEAAAAmAAEAAQABAAAAAAAlAAMAAQABAAIAAAAlAAIAAQABAAEAAAAlAAEAAQABAAAAAAAkAAMAAQABAAIAAAAkAAIAAQABAAEAAAAkAAEAAQABAAAAAAAjAAMAAQABAAIAAAAjAAIAAQABAAEAAAAjAAEAAQABAAAAAAAiAAMAAQABAAIAAAAiAAIAAQABAAEAAAAiAAEAAQABAAAAAAAhAAMAAQABAAIAAAAhAAIAAQABAAEAAAAhAAEAAQABAAAAAAAgAAMAAQABAAIAAAAgAAIAAQABAAEAAAAgAAEAAQABAAAAAAAfAAMAAQABAAIAAAAfAAIAAQABAAEAAAAfAAEAAQABAAAAAAAeAAMAAQABAAIAAAAeAAIAAQABAAEAAAAeAAEAAQABAAAAAAAdAAMAAQABAAIAAAAdAAIAAQABAAEAAAAdAAEAAQABAAAAAAAcAAMAAQABAAIAAAAcAAIAAQABAAEAAAAcAAEAAQABAAAAAAAbAAMAAQABAAIAAAAbAAIAAQABAAEAAAAbAAEAAQABAAAAAAAaAAMAAQABAAIAAAAaAAIAAQABAAEAAAAaAAEAAQABAAAAAAAZAAMAAQABAAIAAAAZAAIAAQABAAEAAAAZAAEAAQABAAAAAAAYAAMAAQABAAIAAAAYAAIAAQABAAEAAAAYAAEAAQABAAAAAAAXAAMAAQABAAIAAAAXAAIAAQABAAEAAAAXAAEAAQABAAAAAAAWAAMAAQABAAIAAAAWAAIAAQABAAEAAAAWAAEAAQABAAAAAAAVAAMAAQABAAIAAAAVAAIAAQABAAEAAAAVAAEAAQABAAAAAAAUAAMAAQABAAIAAAAUAAIAAQABAAEAAAAUAAEAAQABAAAAAAATAAMAAQABAAIAAAATAAIAAQABAAEAAAATAAEAAQABAAAAAAASAAMAAQABAAIAAAASAAIAAQABAAEAAAASAAEAAQABAAAAAAARAAMAAQABAAIAAAARAAIAAQABAAEAAAARAAEAAQABAAAAAAAQAAMAAQABAAIAAAAQAAIAAQABAAEAAAAQAAEAAQABAAAAAAAPAAMAAQABAAIAAAAPAAIAAQABAAEAAAAPAAEAAQABAAAAAAAOAAMAAQABAAIAAAAOAAIAAQABAAEAAAAOAAEAAQABAAAAAAANAAMAAQABAAIAAAANAAIAAQABAAEAAAANAAEAAQABAAAAAAAMAAMAAQABAAIAAAAMAAIAAQABAAEAAAAMAAEAAQABAAAAAAALAAMAAQABAAIAAAALAAIAAQABAAEAAAALAAEAAQABAAAAAAAKAAMAAQABAAIAAAAKAAIAAQABAAEAAAAKAAEAAQABAAAAAAAJAAMAAQABAAIAAAAJAAIAAQABAAEAAAAJAAEAAQABAAAAAAAIAAMAAQABAAIAAAAIAAIAAQABAAEAAAAIAAEAAQABAAAAAAAHAAMAAQABAAIAAAAHAAIAAQABAAEAAAAHAAEAAQABAAAAAAAGAAMAAQABAAIAAAAGAAIAAQABAAEAAAAGAAEAAQABAAAAAAAFAAMAAQABAAIAAAAFAAIAAQABAAEAAAAFAAEAAQABAAAAAAAEAAMAAQABAAIAAAAEAAIAAQABAAEAAAAEAAEAAQABAAAAAAADAAMAAQABAAIAAAADAAIAAQABAAEAAAADAAEAAQABAAAAAAA=")
+tile_set = ExtResource("2_jon3f")
+
+[node name="Exit" parent="." instance=ExtResource("3_8eiv4")]
+position = Vector2(796, -17)
+
+[node name="Lava" parent="." instance=ExtResource("4_yd8fq")]
+position = Vector2(56, 8)
+
+[node name="Lava" parent="Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava2" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(256, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Lava" parent="Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava2/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava/Lava" instance=ExtResource("4_yd8fq")]
+position = Vector2(16, 0)
+
+[node name="Player" parent="." instance=ExtResource("5_yd8fq")]
+position = Vector2(-265, -112)
+
+[node name="Button" parent="." instance=ExtResource("6_vybwq")]
+position = Vector2(-230, -81)
+interaction = SubResource("Resource_4c4gq")
+
+[node name="Box" parent="." instance=ExtResource("7_4cgce")]
+position = Vector2(-6, -9)
+
+[node name="MovingObject" parent="." instance=ExtResource("8_twi1l")]
+position = Vector2(102, -74)
+DestinationDelta = Vector2(600, 0)
+
+[node name="PeriodicTimer" parent="." instance=ExtResource("9_hy5j1")]
+position = Vector2(-69, -139)
+connection = SubResource("Resource_xxxi4")
+initial_behavior = 3
