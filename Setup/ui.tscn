@@ -1,7 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1lfaspa5fho0"]
+[gd_scene load_steps=3 format=4 uid="uid://b1lfaspa5fho0"]
 
 [ext_resource type="PackedScene" uid="uid://dopyqm561yggh" path="res://Setup/victory_screen.tscn" id="1_tafwf"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_tafwf"]
+_data = PackedByteArray("AAADAAUAAAABAAAAgAAAAEAAAAAkAgAAUklGRhwCAABXRUJQVlA4TA8CAAAvf8APEC+gkI0kOLavxkocyRFmG8e29wjO6giybUMdxDEuICjyf7QA3A64avV/QLu23bq1I90KCHTAFe5GMMgGMIj+i5F8LDvv5Cei/xNw/J/QwM2sY9axK252mJl1rGMv+fVUz+IqQNAhwc8OIBD3ns+tmUlRiZSiFBRnrypGqjKzpPyEKhdT6xI758icOvvaU1pj5Yo9PrRzUNIlKyGzdHYl0kY5WCg9PpBJzru1b+Z4EVKS48Jzu9KjtKOkXVHKKF7U2OlZ2uX5XMxw5gjmGDGZYzH97CMYYxLhMUdMj8cM8M6PB/jRuXVwrs5jzd7umNlhD55PPWh2Hv+om9l5mJ3H0cyOZvaG2XnTzB4DzDpm1nAzvNlPz47d449lCbo6bgmkN3DAAc4u7vO5mEohCjJReMsilZ6Jzq5UotQHyBGbYiorUXrLqbWTF2snWvsTi6xclNZ+gZTXm6pEVR/IwdqhnFK+E3VZM6Q1P1HahaK0K+rFXrEW87LFHlsfiDliMn6bIyZzLG/BiMEY1Dj7iNGDGPEc95374Y1rhz45O2A48Jy92bFmLzt+2k8fe9fsPF6b2fE7bGbN7DgOu35ZMzNreMPNrGP4t+F4S7fkKsuvS09vCUkhid8BN8qcqqGs78tXaKG1fx8hrURCyq+Ltbyx94ga6tr1dYzhrUfAZPQR8+s62GHgHejAt/2vFgA=")
+size_override = Vector2(128, 64)
 
 [node name="UI" type="CanvasLayer"]
 
 [node name="VictoryScreen" parent="." instance=ExtResource("1_tafwf")]
+
+[node name="Sprite2D2" type="Sprite2D" parent="VictoryScreen"]
+texture_filter = 1
+position = Vector2(568.00006, 312.00003)
+scale = Vector2(5, 5)
+texture = SubResource("PortableCompressedTexture2D_tafwf")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://Setup/WinScreen.ase",
+"source_uid": 6512223051612779161
+}
+metadata/_aseprite_wizard_source_file_hash_ = "3553652db20a805a80d1c3668c147fe5"

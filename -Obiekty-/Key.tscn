@@ -1,6 +1,15 @@
-[gd_scene load_steps=8 format=4 uid="uid://4lbvm6c0cabr"]
+[gd_scene load_steps=10 format=4 uid="uid://4lbvm6c0cabr"]
 
 [ext_resource type="Script" uid="uid://bj2ajrpj5fbcv" path="res://Objects/Key/key.gd" id="1_5l2od"]
+[ext_resource type="Shader" uid="uid://bwu1edysraujv" path="res://shaders/Outline.gdshader" id="2_n06sb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kng3x"]
+shader = ExtResource("2_n06sb")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_5l2od"]
 _data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAACIAAAAUklGRoAAAABXRUJQVlA4THMAAAAvD8ADEGdgpmGa+heBLJQsfAMbCtq2YcofXgGMxb8K2khSDoWdfz18DwKCIv9HCwAkBsCJqfftv+jzWFtx6bc0jpg9GEWSpKgtLBno33xX4kpgOhNn4pTxKYjo/wTgv43qROidUoDkSPIWw3YMoHGXSfwXAA==")
@@ -45,6 +54,8 @@ script = ExtResource("1_5l2od")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_kng3x")
+instance_shader_parameters/outline = false
 texture = SubResource("PortableCompressedTexture2D_5l2od")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
@@ -72,7 +83,8 @@ metadata/_aseprite_wizard_source_file_hash_ = "c101243136cc735f1e2249ca05ce0895"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("ConvexPolygonShape2D_5l2od")
 
-[node name="PickUpQueue" type="AnimatedSprite2D" parent="."]
+[node name="PickUpCue" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_5l2od")

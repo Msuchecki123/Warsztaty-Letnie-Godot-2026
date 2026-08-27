@@ -9,8 +9,8 @@ size_override = Vector2(20, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqd3i"]
 size = Vector2(24, 14)
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_hn3lg"]
-_data = PackedByteArray("AAADAAUAAAABAAAAJAAAAA4AAAB0AAAAUklGRmwAAABXRUJQVlA4TF8AAAAvI0ADAB9AJECaO0JFTSpq2wYO4ei994QEZGyHJJpg/uN3gDW+wCqy7SZREQ2ZOOgFGVGADTxgIVUaFnq5fGEgov8TQL5rX471PE9XO5Y1gSjHCVDGZjCImkDktePfAAA=")
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_0t1cg"]
+_data = PackedByteArray("AAADAAUAAAABAAAAJAAAAA4AAACUAAAAUklGRowAAABXRUJQVlA4TIAAAAAvI0ADEC+gpm0DNvcHQsdbJCXStoHL2N1cy/2bOFTTNhID4Nb2cBp/Pj8SZNvUdzznfSAPoJS39df2A6M2khzNpf9tQnAINjEYBnPNH8zmRRDR/wnAxByH5aPhkI0qAThVeql4YeY/NtSIqqmK2c5X4iJ1AHhUwxSKiN6Kb3V6AQ==")
 size_override = Vector2(36, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djdu7"]
@@ -69,7 +69,7 @@ shape = SubResource("RectangleShape2D_wqd3i")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -6)
-texture = SubResource("PortableCompressedTexture2D_hn3lg")
+texture = SubResource("PortableCompressedTexture2D_0t1cg")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -91,7 +91,7 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://Objects/Button/ButtonBase.ase",
 "source_uid": 6736248891519752427
 }
-metadata/_aseprite_wizard_source_file_hash_ = "e8b4d239b28b89fc903227e192b25e86"
+metadata/_aseprite_wizard_source_file_hash_ = "ff1ab7d6ee6cb68dd1fcf48cb210646e"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)

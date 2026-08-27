@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wt2np4lh05hx" path="res://Objects/MovingObject/MovingObject.gd" id="1_66v22"]
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_66v22"]
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_afqgx"]
 _data = PackedByteArray("AAADAAUAAAABAAAAQAAAACAAAABcAQAAUklGRlQBAABXRUJQVlA4TEcBAAAvP8AHEIegoG0bNtU3Bo/CFLWRAs1yfgkC8O8SNY2kwLl7UUBPiYCgyP/RAkDPAZgwighRJBNJCE+68qgYfl3dbve/B0m27cZthP/i7qeMEPvfrkDIzaxGEf2fgPgvXP9ob1fplNpfxhdJM0mslZk2XBU6SbtW9rYBbSNCegLZ2uZXT87mWdtsn5L+oKZrAfXata0x8EfV+t6qgvXdBa6X5dHHzNdUVfHErqoTVbUy0+M8bqrNFuFj1VrVZ2t7je18LQ9dOBxzaHudrfTEQMNdoYEHVXWiKtN4D9mjeI2zX2tVmzkCsudxuLDzwfZu7h2QPQ9FRGhyBPCLOEBuuSuaKxPad0AOFL2unMIT7w/kkMcudGXnzSsBRtwVQ115ByftjWKsK7Mf2DCUmv3jROjKWLowFKB2IinOSuoEUkiN9hERkhpJiiEA")
 size_override = Vector2(64, 32)
 
@@ -17,7 +17,7 @@ script = ExtResource("1_66v22")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_66v22")
+texture = SubResource("PortableCompressedTexture2D_afqgx")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }

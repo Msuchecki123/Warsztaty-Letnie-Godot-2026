@@ -7,6 +7,7 @@ class_name KeyObj
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+	cue = $PickUpCue
 
 
 func handle_interaction(body: Node2D) -> void:

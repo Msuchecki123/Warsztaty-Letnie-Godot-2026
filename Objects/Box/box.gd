@@ -1,10 +1,12 @@
 extends PlayerInteractable
 class_name Box
 
+func _ready() -> void:
+	cue = $PickUpCue
 
 func on_interaction():
 	super.on_interaction()
-	# print("On Interaction!")
+	#print("On Interaction!")
 
 
 func off_interaction():

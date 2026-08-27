@@ -6,8 +6,9 @@ var _impulse := false
 var _new_position: Vector2
 var _vel: Vector2
 
-@export var throw_power := 1.4
+@onready var cue
 
+@export var throw_power := 1.4
 
 func on_interaction():
 	pass
@@ -22,6 +23,7 @@ func fix_position(new_pos: Vector2, vel: Vector2, impulse: bool = false) -> void
 	_new_position = new_pos
 	_vel = vel
 	_impulse = impulse
+	#print("fixed_position")
 
 
 func unfix_position() -> void:
@@ -39,3 +41,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		state.angular_velocity = 0
 		if _impulse:
 			_reset_state = false
+
+func toggle_otuline(state : bool):
+	var sprite : Sprite2D = $Sprite2D
+	sprite.set_instance_shader_parameter("outline", state)
+	cue.visible = state

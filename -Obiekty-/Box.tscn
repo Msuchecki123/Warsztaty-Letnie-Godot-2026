@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=4 uid="uid://dti6taqvwyq36"]
 
 [ext_resource type="Script" uid="uid://j7xfhlo2deqw" path="res://Objects/Box/box.gd" id="1_ite0f"]
-[ext_resource type="Shader" uid="uid://bwu1edysraujv" path="res://shaders/Outline.gdshader" id="2_lde1j"]
+[ext_resource type="Shader" uid="uid://bwu1edysraujv" path="res://shaders/Outline.gdshader" id="2_h4gmr"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_glifb"]
-shader = ExtResource("2_lde1j")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rysw7"]
+shader = ExtResource("2_h4gmr")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
 shader_parameter/pattern = 0
@@ -47,12 +47,12 @@ animations = [{
 [node name="Box" type="RigidBody2D"]
 z_index = 5
 collision_layer = 5
-collision_mask = 6
+collision_mask = 7
 script = ExtResource("1_ite0f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_glifb")
+material = SubResource("ShaderMaterial_rysw7")
 texture = SubResource("PortableCompressedTexture2D_ite0f")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
@@ -80,7 +80,8 @@ metadata/_aseprite_wizard_source_file_hash_ = "78ea4c7839734f7e629030c61329775d"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ite0f")
 
-[node name="PickUpQueue" type="AnimatedSprite2D" parent="."]
+[node name="PickUpCue" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_gq1dk")

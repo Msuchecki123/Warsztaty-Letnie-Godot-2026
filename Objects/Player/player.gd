@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 
 	if _grabbed_interactable != null:
 		_grabbed_interactable.fix_position(grab_point.global_position, velocity)
+		#print("skibidi")
 	pass
 
 
@@ -62,12 +63,14 @@ func _calculate_gravity() -> Vector2:
 
 func _on_body_entered_interaction_area(body: Node2D) -> void:
 	if body is PlayerInteractable:
+		body.toggle_otuline(true)
 		_player_interactables.append(body)
 		#print(_player_interactables)
 
 
 func _on_body_exited_interaction_area(body: Node2D) -> void:
 	if body is PlayerInteractable:
+		body.toggle_otuline(false)
 		_player_interactables.erase(body)
 		#print(_player_interactables)
 
@@ -94,6 +97,7 @@ func _interact() -> void:
 
 		_grabbed_interactable = nearest_interactable
 		_grabbed_interactable.on_interaction()
+		#print(_grabbed_interactable)
 
 
 func _physics_process(delta: float) -> void:
@@ -101,12 +105,21 @@ func _physics_process(delta: float) -> void:
 		velocity += _calculate_gravity() * delta
 
 	#facing directions
-	if velocity.x < -0.01:
-		flipped = true
-		sprite.flip_h = true
-	elif velocity.x > 0.01:
-		flipped = false
-		sprite.flip_h = false
+	if not is_on_floor():
+		if velocity.y > 0.01:
+			sprite.animation = "Falling"
+		else:
+			sprite.animation = "Rising"
+	else:
+		sprite.animation = "Walk"
+		if velocity.x < -0.01:
+			flipped = true
+			sprite.flip_h = true
+		elif velocity.x > 0.01:
+			flipped = false
+			sprite.flip_h = false
+		else:
+			sprite.animation = "Idle"
 
 	if prev_flip != flipped:
 		$GrabPoint.position.x *= -1
