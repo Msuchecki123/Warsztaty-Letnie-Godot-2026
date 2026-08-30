@@ -6,9 +6,10 @@ class_name Camera
 
 var _target_pos: Vector2 = Vector2.ZERO
 
+@onready var inital_level_offset = Game.get_level().position
 
 func _process(delta: float) -> void:
 	if target != null: 
 		_target_pos = target.position
 
-	position = lerp(position, _target_pos, acceleration * delta)
+	position = lerp(position, _target_pos + inital_level_offset, acceleration * delta)

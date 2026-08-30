@@ -15,6 +15,6 @@ func _on_trigger_area_entered(body: Node2D) -> void:
 	if body is Player:
 		#body.velocity = local_up * jump_velocity
 		body.apply_impulse_velocity(local_up * jump_velocity)
-		print("jump")
+		#print("jump")
 	elif body is PlayerInteractable:
 		body.fix_position(body.global_position, local_up * jump_velocity, true)

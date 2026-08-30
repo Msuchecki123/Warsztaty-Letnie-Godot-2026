@@ -92,6 +92,7 @@ script = ExtResource("1_0w4kt")
 texture_filter = 1
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_ak5h4")
+autoplay = "default"
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }

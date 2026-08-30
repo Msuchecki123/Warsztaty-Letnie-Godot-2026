@@ -1,17 +1,3 @@
-Grafika:
-Postać:
-	animacja chodzenia
-	animacja biegania (jak będziemy chcieli)
-	animacja rzucania i podnoszenia)
-Tileset, w skali do postaci (rework)
-Ruchoma platforma (rework)
-Spawn gracza
-Meta
-Win screen
-Guzik (rework)
-Background (coś dużego, tileable na boki)
-
-
 Programowanie:
 znane błędy
 Wszystkie zmienne i interakcje powinny być na @export

@@ -126,7 +126,7 @@ func _physics_process(delta: float) -> void:
 	prev_flip = flipped
 
 	if _apply_impulse_velocity:
-		print("velocity applied")
+		#print("velocity applied")
 		velocity = _impulse_velocity
 		_apply_impulse_velocity = false
 

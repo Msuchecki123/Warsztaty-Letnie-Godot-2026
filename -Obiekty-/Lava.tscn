@@ -132,6 +132,7 @@ animations = [{
 size = Vector2(14, 14)
 
 [node name="Lava" type="Node2D"]
+z_index = 2
 script = ExtResource("1_nsn16")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
