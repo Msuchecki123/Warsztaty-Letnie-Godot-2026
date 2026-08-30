@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://cu8ahv65xrecd"]
 
-[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://-Levels-/level.gd" id="1_xb24h"]
+[ext_resource type="Script" uid="uid://cs3883rhuan1e" path="res://level.gd" id="1_xb24h"]
 [ext_resource type="TileSet" uid="uid://cidtehwoe2ty7" path="res://Tileset/Tileset.tres" id="2_jon3f"]
 [ext_resource type="PackedScene" uid="uid://di080tovdr3bq" path="res://-Obiekty-/Exit.tscn" id="3_8eiv4"]
 [ext_resource type="PackedScene" uid="uid://djvilelfve37h" path="res://-Obiekty-/Lava.tscn" id="4_yd8fq"]
