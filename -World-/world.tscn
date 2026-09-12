@@ -18,3 +18,4 @@ acceleration = 5
 metadata/_custom_type_script = "uid://bx81vtjfd4tdv"
 
 [node name="Background" parent="." instance=ExtResource("5_el6tu")]
+texture_filter = 1

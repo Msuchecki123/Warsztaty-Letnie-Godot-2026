@@ -148,6 +148,7 @@ z_index = 1
 collision_mask = 2
 platform_on_leave = 1
 script = ExtResource("1_156m4")
+max_speed = 300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
